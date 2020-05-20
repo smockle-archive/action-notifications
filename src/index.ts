@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import core from "@actions/core";
+import * as core from "@actions/core";
 
 import { isClosed, isLateReview, isRead } from "./filters";
 import { store } from "./store";

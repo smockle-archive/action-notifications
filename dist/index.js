@@ -1,10 +1,26 @@
 #!/usr/bin/env node
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = __importDefault(require("@actions/core"));
+const core = __importStar(require("@actions/core"));
 const filters_1 = require("./filters");
 const store_1 = require("./store");
 (async () => {
@@ -14,9 +30,9 @@ const store_1 = require("./store");
             ? "Retrieved a GitHub token"
             : "Failed to retrieve a GitHub token");
         // Retrieve collection of filters to apply
-        const filterRead = !!core_1.default.getInput("filter_read");
-        const filterLateReview = !!core_1.default.getInput("filter_late_review");
-        const filterClosed = !!core_1.default.getInput("filter_closed");
+        const filterRead = !!core.getInput("filter_read");
+        const filterLateReview = !!core.getInput("filter_late_review");
+        const filterClosed = !!core.getInput("filter_closed");
         console.log(`Filters: ${[
             filterRead && "filterRead",
             filterLateReview && "filterLateReview",
