@@ -51,14 +51,14 @@ class Store {
     }
     async fetchIssue(url) {
         var _a, _b;
-        // if available, return cached pull request
+        // if available, return cached issue
         if ((_a = this._issues) === null || _a === void 0 ? void 0 : _a[url]) {
             return (_b = this._issues) === null || _b === void 0 ? void 0 : _b[url];
         }
-        // otherwise, return cached pull request after fetching and caching
+        // otherwise, return cached issue after fetching and caching
         const [owner, repo, issue_number] = url
             .replace("https://api.github.com/repos/", "")
-            .replace("/pulls", "")
+            .replace("/issues", "")
             .split("/");
         const { data: issue } = await this.octokit.issues.get({
             owner,
