@@ -1,0 +1,22 @@
+name: "action-notifications"
+author: "smockle"
+description: "An action which closes GitHub notifications."
+inputs:
+  filter_read:
+    description: "Whether to filter read notifications."
+    required: false
+    default: false
+  filter_late_review:
+    description: "Whether to filter review requests for closed (merged or unmerged) pull requests."
+    required: false
+    default: false
+  filter_closed:
+    description: "Whether to filter closed issues and pull requests."
+    required: false
+    default: false
+runs:
+  using: "node12"
+  main: "dist/index.js"
+branding:
+  icon: "bell-off"
+  color: "yellow"

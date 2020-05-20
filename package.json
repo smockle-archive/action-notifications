@@ -1,0 +1,28 @@
+{
+  "name": "action-notifications",
+  "description": "An action which closes GitHub notifications.",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smockle/action-notifications.git"
+  },
+  "author": "Clay Miller <clay@smockle.com> (https://www.smockle.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smockle/action-notifications/issues"
+  },
+  "homepage": "https://github.com/smockle/action-notifications#readme",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^2.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.2"
+  }
+}
