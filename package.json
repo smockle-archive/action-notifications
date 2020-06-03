@@ -23,6 +23,6 @@
     "@actions/github": "^2.2.0"
   },
   "devDependencies": {
-    "typescript": "^3.9.2"
+    "typescript": "^3.9.3"
   }
 }
