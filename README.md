@@ -26,7 +26,7 @@ An action which closes GitHub notifications.
 
 ```YAML
 - name: Resolve notifications
-  uses: "smockle/action-notifications@master"
+  uses: "smockle/action-notifications@main"
   with:
     filter_read: true
     filter_late_review: true
